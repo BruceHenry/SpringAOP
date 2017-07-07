@@ -7,6 +7,7 @@
           <file>file://$MODULE_DIR$/src/test2.xml</file>
           <file>file://$MODULE_DIR$/src/test.xml</file>
           <file>file://$MODULE_DIR$/src/2.xml</file>
+          <file>file://$MODULE_DIR$/src/db.xml</file>
         </fileset>
       </configuration>
     </facet>
