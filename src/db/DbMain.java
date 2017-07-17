@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 public class DbMain {
-
     public static void main(String[] args) throws SQLException {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("db.xml");
         //DataSource ds = (DataSource) ctx.getBean("dataSource");
@@ -26,15 +24,16 @@ public class DbMain {
         NamedParameterJdbcTemplate namedParameterJdbcTemplate = (NamedParameterJdbcTemplate) ctx.getBean("namedParameterJdbcTemplate");
 
 
-        update(jdbcTemplate);
-        insert(jdbcTemplate);
-
-        batchUpdate(jdbcTemplate);
-
-        NamedParaJDBC(namedParameterJdbcTemplate);
-        NamedParaJDBC2(namedParameterJdbcTemplate);
-
-        querySingleObject(jdbcTemplate);
+//        update(jdbcTemplate);
+//        insert(jdbcTemplate);
+//
+//        batchUpdate(jdbcTemplate);
+//
+//        NamedParaJDBC(namedParameterJdbcTemplate);
+//        NamedParaJDBC2(namedParameterJdbcTemplate);
+//
+//        querySingleObject(jdbcTemplate);
+//        delete(jdbcTemplate);
         queryMultipleObject(jdbcTemplate);
     }
 
@@ -42,6 +41,10 @@ public class DbMain {
     public static void update(JdbcTemplate jdbcTemplate){
         String sql = "update user set name=?  where name=?";
         jdbcTemplate.update(sql, "baohan-haha", "baohan");
+    }
+    public static void delete(JdbcTemplate jdbcTemplate){
+        String sql = "delete from user where name=?;";
+        jdbcTemplate.update(sql,"baohan");
     }
 
     //update or insert multiple rows

@@ -12,7 +12,6 @@ import java.util.List;
 @Aspect
 @Component
 public class Log{
-
     @Pointcut("execution(* *(int,int))")
     public void declareExpression(){}
 
@@ -57,5 +56,4 @@ public class Log{
 //        }
 //        return result;
 //    }
-
 }
